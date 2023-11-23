@@ -74,9 +74,10 @@ body {
 
 /* Cookie Start */
 .wrapper{
-    display: none;
+    /* display: none; */
     position: fixed;
     bottom: 50px;
+    right: 20px;
     max-width: 345px;
     width: 100%;
     background-color: #fff;
@@ -86,10 +87,7 @@ body {
  
 }
 
-.wrapper.show{
-    right: 20px;
-    display: block;
-}
+
 
 .wrapper header{
     display: flex;
@@ -165,6 +163,22 @@ color: #ff0;
 }
 
 /* Adblock End */
+/* Newsletter Start */
+
+.news{
+    /* display: none; */
+    position: fixed;
+    bottom: 1px;
+    max-width: 345px;
+    width: 100%;
+    background-color: #fff;
+    border: #000 solid 4px;
+    border-radius: 8px;
+    padding: 15px 25px 22px;
+    transition: all 0.3s ease;
+}
+
+/* Newsletter End */
 
 @media screen and (min-width:1px) and (max-width:1024px) {
     .grid-container {

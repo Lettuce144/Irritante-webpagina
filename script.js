@@ -3,6 +3,7 @@
 const cookieBox = document.querySelector('.wrapper');
 let Counter = 0;
 let TapAmount = 25;
+
 function OnPageLoad() {
     cookieBox.classList.add('show');
 }
@@ -22,11 +23,12 @@ function Decline() {
 }
 
 function Accept() {
-    cookieBox.classList.remove('show');
+    document.getElementsByClassName("wrapper")[0].style.display = "none";
+    console.log("Accept");
     document.cookie = "cookieBy= Jens Zeef en Micha Koster; max-age= " + 60 * 60 * 24 * 30;
 }
 
-window.addEventListener("load", OnPageLoad);
+
 
 // Cookie End
 // Adblock Start
@@ -47,3 +49,40 @@ function adBlockCheck() {
 adBlockCheck()
 
 // Adblock End
+// News Start
+
+function addNewsPopup() {
+    document.body.innerHTML += '<div class="news" style="bottom:' + getRandomInt(1, window.innerHeight) + 'px; left:' + getRandomInt(1, window.innerWidth) + 'px;"><h1>Subscribe to our Newsletter!</h1><input type="email"><button>Send!</button><button onclick="this.parentElement.style.display = `none`;">Decline</button></div>'
+}
+
+function generateNewsPopups(amount) {
+    for (let i = 0; i <= amount; i++) {
+        addNewsPopup();
+    }
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function CloseAllNewsPopups() {
+    let NewsPopUps = document.getElementsByClassName('news');
+    console.log(NewsPopUps.length)
+    for (var i = 0; i < NewsPopUps.length; i++) {
+        NewsPopUps[i].style.display = "none";
+    }
+}
+
+document.addEventListener("keypress", function (event) {
+    if (event.keyCode == 13) {
+        console.log("test")
+        CloseAllNewsPopups();
+    }
+});
+
+// News End
+
+generateNewsPopups(300)
+
