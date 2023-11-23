@@ -7,9 +7,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
+    <div class="adsbygoogle ad ads adsbox doubleclick ad-placement ad-placeholder adbadge BannerAd" id="test-ad"></div>
     <div class="grid-container">
         <div class="griditem header"></div>
         <div class="griditem iphone">
@@ -32,16 +34,19 @@
                 </header>
                 <div class="data">
                     <p id="CookieText">This website uses cookies to help you have a superior and more relevant browsing experience on
-                        the website. <a href="index.html">Read more...</a></p>
+                        the website. By using this website you agree to the following:  <a href="index.html">Read more...</a></p>
                     <div class="buttons">
                         <button class="accept" onclick="Accept()">Accept</button>
                         <button class="decline" onclick="Decline()">Decline</button>
                     </div>
                 </div>
             </div>
+            <div id="adblock">
+                <h1>Adblock Detected</h1>
+                <p>Please whitelist this website in order to continue.</p>
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,5 @@
+// Cookie Start
+
 const cookieBox = document.querySelector('.wrapper');
 let Counter = 0;
 let TapAmount = 25;
@@ -15,11 +17,33 @@ function Decline() {
 
     if (Counter == TapAmount) {
         cookieBox.classList.remove('show');
+        window.close()
     }
 }
 
 function Accept() {
     cookieBox.classList.remove('show');
+    document.cookie = "cookieBy= Jens Zeef en Micha Koster; max-age= " + 60 * 60 * 24 * 30;
 }
 
 window.addEventListener("load", OnPageLoad);
+
+// Cookie End
+// Adblock Start
+function adBlockCheck() {
+    setTimeout(function () {
+        const testAd = document.getElementById('test-ad');
+        const testAdStyle = getComputedStyle(testAd);
+
+        if (testAdStyle.display === 'none') {
+            console.log("Adblock detected")
+            document.getElementById('adblock').classList.add('show');
+        } else {
+            console.log("Adblock not detected")
+        }
+    }, 1000)
+}
+
+adBlockCheck()
+
+// Adblock End
