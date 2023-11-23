@@ -5,6 +5,8 @@ body {
     height: 100%;
     width: 100%;
     margin: 0%;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .grid-container {
@@ -69,6 +71,73 @@ body {
     width: auto;
     max-height: 80vh;
 }
+
+/* Cookie Start */
+.wrapper{
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    max-width: 345px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px 25px 22px;
+    transition: all 0.3s ease;
+ 
+}
+
+.wrapper.show{
+    right: 20px;
+    display: block;
+}
+
+.wrapper header{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+header i{
+    color: brown;
+    font-size: 32px;
+}
+
+header h2{
+    font-weight: 500;
+}
+
+.wrapper .data p{
+    font-size: 16px;
+}
+
+.data p a{
+    text-decoration: none;
+}
+
+.data p a:hover{
+text-decoration: underline;
+color: #ff0;
+}
+
+.wrapper .buttons{
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons button{
+    width: calc(100% /2 - 10px);
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* Cookie End */
 
 @media screen and (min-width:1px) and (max-width:1024px) {
     .grid-container {

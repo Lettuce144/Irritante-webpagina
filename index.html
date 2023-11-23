@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -22,10 +23,25 @@
             <img src="/Assets/download-ios.svg" alt="download-ios" class="download">
             <img src="/Assets/download-android.svg" alt="download-android" class="download">
             <p>Sip news is built by Product Hunt and it's awesome community.</p>
-            <p>Dit is een test wefwefweef</p>
         </div>
-        <div class="griditem footer"></div>
+        <div class="griditem footer">
+            <div class="wrapper">
+                <header>
+                    <i class="bx bx-cookie"></i>
+                    <h2>Cookies Consent</h2>
+                </header>
+                <div class="data">
+                    <p id="CookieText">This website uses cookies to help you have a superior and more relevant browsing experience on
+                        the website. <a href="index.html">Read more...</a></p>
+                    <div class="buttons">
+                        <button class="accept" onclick="Accept()">Accept</button>
+                        <button class="decline" onclick="Decline()">Decline</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
