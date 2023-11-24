@@ -17,7 +17,7 @@ function Decline() {
     console.log(Counter);
 
     if (Counter == TapAmount) {
-        cookieBox.classList.remove('show');
+        document.getElementsByClassName("wrapper")[0].style.display = "none";
         window.close()
     }
 }
