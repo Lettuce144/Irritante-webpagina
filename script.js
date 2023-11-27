@@ -53,7 +53,59 @@ adBlockCheck()
 // News Start
 
 function addNewsPopup() {
-    document.body.innerHTML += '<div class="news" style="bottom:' + getRandomInt(1, window.innerHeight) + 'px; left:' + getRandomInt(1, window.innerWidth) + 'px;"><h1>Subscribe to our Newsletter!</h1><input type="email"><button>Send!</button><button onclick="this.parentElement.style.display = `none`;">Decline</button></div>'
+    const colors = ["1a3e5f"
+    ,"b72d4e"
+    ,"8f6c23"
+    ,"d94a87"
+    ,"5071a9"
+    ,"e5b8cf"
+    ,"3f9e42"
+    ,"a67d29"
+    ,"6c2f8b"
+    ,"f15e2c"
+    ,"9d1b4f"
+    ,"72c8e0"
+    ,"4f7e61"
+    ,"c36a2f"
+    ,"5b349d"
+    ,"a8cf57"
+    ,"217685"
+    ,"e3486b"
+    ,"8b5693"
+    ,"d21f7c"
+    ,"654a8e"
+    ,"c9a24f"
+    ,"3e854d"
+    ,"b16f98"
+    ,"7c4521"
+    ,"f39a6d"
+    ,"4d2c5f"
+    ,"a31e3b"
+    ,"628fbc"
+    ,"e07532"
+    ,"9c5d81"
+    ,"52ab67"
+    ,"dc3f9e"
+    ,"876214"
+    ,"ba87cf"
+    ,"31546a"
+    ,"e2b549"
+    ,"5f3d72"
+    ,"9a8e54"
+    ,"4586b3"
+    ,"f7642a"
+    ,"6d198b"
+    ,"aef5c7"
+    ,"397ab8"
+    ,"c1582f"
+    ,"73496c"
+    ,"e97c45"
+    ,"62438f"
+    ,"b1d364"
+    ,"2c5e71"]
+    let randomIndex = Math.round(Math.random() * (colors.length - 1))
+    let randomColor = colors[randomIndex]
+    document.body.innerHTML += '<div class="news" style="bottom:' + getRandomInt(1, window.innerHeight) + 'px; left:' + getRandomInt(1, window.innerWidth) + 'px;background-color:#'+ randomColor +';"><h1>Subscribe to our Newsletter!</h1><input type="email"><button>Send!</button><button onclick="this.parentElement.style.display = `none`;">Decline</button></div>'
 }
 
 function generateNewsPopups(amount) {
@@ -77,13 +129,12 @@ function CloseAllNewsPopups() {
 }
 
 document.addEventListener("keypress", function (event) {
-    if (event.keyCode == 13) {
-        console.log("test")
+    if (event.key == "q" ) {
         CloseAllNewsPopups();
     }
 });
 
 // News End
 
-generateNewsPopups(300)
+generateNewsPopups(20)
 
