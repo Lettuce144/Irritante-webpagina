@@ -254,6 +254,24 @@ header h2 {
   transition: 0.5s ease;
 }
 
+h1,
+p {
+  transition: 0.5s ease;
+  animation: size 1s infinite;
+}
+
+@keyframes size {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) skew(-20deg);
+  }
+  100% {
+    transform: scale(1) skew(20deg);
+  }
+}
+
 .wrapper .buttons {
   margin-top: 16px;
   width: 100%;
