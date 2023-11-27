@@ -123,48 +123,50 @@ document.addEventListener("keypress", function (event) {
 generateNewsPopups(20);
 
 // Select the element
-let element = document.querySelector(".download");
+let element = document.getElementsByClassName("download");
 
 // Initialize move variable
 let moveX = 0;
 let moveY = 0;
 
-// Add an event listener for the mouseover event
-element.addEventListener("mouseover", function () {
-  // Increment move
-  moveX += Math.floor(Math.random() * 200);
-  moveY += Math.floor(Math.random() * 200);
-  console.log(moveX, moveY);
+for (let index = 0; index < element.length; index++) {
+  // Add an event listener for the mouseover event
+  element[index].addEventListener("mouseover", function () {
+    // Increment move
+    moveX += Math.floor(Math.random() * 200);
+    moveY += Math.floor(Math.random() * 200);
+    console.log(moveX, moveY);
 
-  // Add the .hovered class to the element
-  this.classList.add("hovered");
+    // Add the .hovered class to the element
+    this.classList.add("hovered");
 
-  // Apply the transformation
-  this.style.transform = `translateX(${moveX}px) translateY(-${moveY}px)`;
-});
-
-element.addEventListener("transitionend", function () {
-  // Check if the element is out of bounds
-  if (!isInViewport(element)) {
-    // Subtract the overflow from the move variable
-    moveX = 0;
-    moveY = 0;
-
-    // Apply the transformation to move the element back
+    // Apply the transformation
     this.style.transform = `translateX(${moveX}px) translateY(-${moveY}px)`;
-  }
-});
+  });
 
-element.addEventListener("mouseout", function () {
-  if (!isInViewport(element)) {
-    // Subtract the overflow from the move variable
-    moveX = 0;
-    moveY = 0;
+  element[index].addEventListener("transitionend", function () {
+    // Check if the element is out of bounds
+    if (!isInViewport(element)) {
+      // Subtract the overflow from the move variable
+      moveX = 0;
+      moveY = 0;
 
-    // Apply the transformation to move the element back
-    this.style.transform = `translateX(${moveX}px) translateY(-${moveY}px)`;
-  }
-});
+      // Apply the transformation to move the element back
+      this.style.transform = `translateX(${moveX}px) translateY(-${moveY}px)`;
+    }
+  });
+
+  element[index].addEventListener("mouseout", function () {
+    if (!isInViewport(element)) {
+      // Subtract the overflow from the move variable
+      moveX = 0;
+      moveY = 0;
+
+      // Apply the transformation to move the element back
+      this.style.transform = `translateX(${moveX}px) translateY(-${moveY}px)`;
+    }
+  });
+}
 
 function isInViewport(element) {
   var rect = element.getBoundingClientRect();
