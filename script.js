@@ -179,7 +179,7 @@ document.addEventListener("keypress", function (event) {
 
 // News End
 
-generateNewsPopups(1);
+generateNewsPopups(5);
 
 // Jens:
 
