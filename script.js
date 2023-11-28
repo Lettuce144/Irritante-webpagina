@@ -144,13 +144,17 @@ function addNewsPopup() {
     getRandomInt(1, window.innerWidth) +
     "px;background-color:" +
     randomColor +
-    ';"><h1>Subscribe to our Newsletter!</h1><input type="email"><button>Send!</button><button onclick="this.parentElement.style.display = `none`;">Decline</button></div>';
+    ';"><h1>Subscribe to our Newsletter!</h1><input type="email"><button>Send!</button><button onclick="Multiply()">Decline</button></div>';
 }
 
 function generateNewsPopups(amount) {
-  for (let i = 0; i <= amount; i++) {
+  for (let i = 1; i <= amount; i++) {
     addNewsPopup();
   }
+}
+
+function Multiply(){
+  generateNewsPopups(2)
 }
 
 function getRandomInt(min, max) {
@@ -175,7 +179,7 @@ document.addEventListener("keypress", function (event) {
 
 // News End
 
-generateNewsPopups(20);
+generateNewsPopups(1);
 
 // Jens:
 
